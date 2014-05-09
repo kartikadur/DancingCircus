@@ -1,0 +1,277 @@
+/*
+ * Theme Name: Dancing Circus
+ * Description: A wordpress theme built for the dance circus website
+ * Author: Kartik Adur
+ * Version: 1.0
+ *
+ * Tags: Responsive, Red, Gold, Circus
+ */
+
+/*
+ * Changes to Bootstrap theme
+ */
+
+/* Temporary Code */
+a {
+	color: #6B0015;
+}
+
+a:hover, a:focus {
+	color: #6B0015;
+}
+
+.label {
+	color: #333;
+}
+
+/*
+ * Css Code
+ */
+
+body {
+	font-family: "Open Sans", sans-serif;
+	background-color: rgba(107, 0, 21, 1);
+	background-color: #6B0015; /* fallback color if gradients are not supported */
+	background-image: -webkit-linear-gradient(right, transparent 50%, rgba(208, 175, 83, 0.3) 50%); /* For Chrome and Safari */
+	background-image: -moz-linear-gradient(right, transparent 50%, rgba(208, 175, 83, 0.3) 50%); /* For old Fx (3.6 to 15) */
+	background-image: -ms-linear-gradient(right, transparent 50%, rgba(208, 175, 83, 0.3) 50%); /* For pre-releases of IE 10*/
+	background-image: -o-linear-gradient(right, transparent 50%, rgba(208, 175, 83, 0.3) 50%); /* For old Opera (11.1 to 12.0) */
+	background-image: linear-gradient(90deg, transparent 50%, rgba(208, 175, 83, 0.3) 50%); /* Standard syntax; must be last */
+	background-size: 100px 100px;
+}
+
+#header {
+	margin: 20px 0;
+}
+/* Menu Styling */
+
+#navigation {
+	background: #FFFDD0;
+}
+
+/* Overrides same line from bootstrap */
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #F1F1F1;
+	background-color: #6B0015;
+	font-weight: bold;
+}
+/* Overrides same line from bootstrap */
+.navbar-default .navbar-nav > li > a {
+	color: #333;
+}
+/* Overrides same line from bootstrap */
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #666;
+	background-color: transparent;
+}
+
+@media (min-width: 768px) {
+
+	#navigation ul {
+		float: left;
+	}
+
+	#navigation form {
+		width: 27%;
+		float: right;
+	}
+
+	.navbar-search {
+		width: 25%;
+	}
+}
+@media (min-width: 992px) {
+	#navigation #bs-example-navbar-collapse-1 {
+		width: 970px;
+		margin: 0 auto;
+		padding: 0 30px;
+	}
+
+	#navigation ul {
+		width: 66.67%;
+		float: left;
+	}
+
+	#navigation form {
+		width: 33.33%;
+		float: right;
+	}
+
+	.navbar-search {
+		width: 25%;
+	}
+}
+@media (min-width: 1170px) {
+	#navigation #bs-example-navbar-collapse-1 {
+		width: 1170px;
+		margin: 0 auto;
+		padding: 0 30px;
+	}
+
+	#navigation ul {
+		width: 66.67%;
+		float: left;
+	}
+
+	#navigation form {
+		width: 33.33%;
+		float: right;
+	}
+
+	.navbar-search {
+		width: 25%;
+	}
+}
+
+/* Sidebar Styling */
+#sidebar aside {
+	/*	padding: 10px;*/
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: #FFFDD0;
+}
+
+#sidebar #post-recent p, #sidebar #post-categories p {
+	border-bottom: 1px solid #6B0015;
+}
+
+#sidebar aside span {
+	float: right;
+}
+
+.list-group-item {
+	border-color: #6B0015;
+	background-color: #FFFDD0;
+	font-size: 85%;
+	font-weight: bold;
+}
+
+.list-group-item .badge {
+	background-color: transparent;
+	color: #333;
+}
+
+#address {
+	border: 1px solid #6B0015;
+	border-radius: 4px;
+	padding: 10px 15px;
+}
+/* Main Content Styling */
+
+main {
+	background: #FFFDD0;
+}
+/* Post or Page Content Styling */
+article {
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: #FFFDD0;
+	/*border: 1px solid #999;
+	 box-shadow: 1px 1px 1px 0 #333;*/
+}
+
+article .post-thumbnail {
+	border: 1px solid #FFFFFF;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	background: #999;
+}
+
+article .post-content {
+	clear: both;
+}
+
+/* Search Bar */
+/* Every Search Bar */
+.navbar-search {
+	margin: 7px 0;
+}
+/* Search Bar in Content */
+#content .navbar-search {
+	width: 100%;
+}
+
+/* Overrides same line from bootstrap */
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus, .navbar-search input:focus + span > button {
+	border-color: rgba(106, 0, 21, 0.8);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(106, 0, 21, 0.6);
+	outline: 0 none;
+}
+
+/*.navbar-search input:focus + span > button {
+ border-color: rgba(106, 0, 21, 0.8);
+ box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(106, 0, 21, 0.6);
+ outline: 0 none;
+ }*/
+
+/** Tag Cloud CSS **/
+#tag-links {
+	list-style-type: none;
+	padding: 0px;
+	margin-bottom: 40px;
+}
+
+#tag-links li {
+	display: inline-block;
+	line-height: 2em;
+}
+
+/**
+ * 	color range
+ * 1 - 6b0015
+ * 2 - 640013
+ * 3 - 5d0012
+ * 4 - 560011
+ * 5 - 50000F
+ * 6 - 49000E
+ * 7 - 42000D
+ * 8 - 3c000b
+ * 9 - 35000a
+ * 10 - 2e0009
+ * 11 - 280007
+ */
+
+li .color-11, li .color-12 {
+	color: #6b0015;
+}
+li .color-13, li .color-14 {
+	color: #640013;
+}
+li .color-15, li .color-16 {
+	color: #5d0012;
+}
+li .color-17, li .color-18 {
+	color: #560011;
+}
+li .color-19, li .color-20 {
+	color: #50000F;
+}
+li .color-21, li .color-22 {
+	color: #49000E;
+}
+li .color-23, li .color-24 {
+	color: #42000D;
+}
+li .color-25, li .color-26 {
+	color: #3c000b;
+}
+li .color-27, li .color-28 {
+	color: #35000a;
+}
+
+li .color-29, li .color-30 {
+	color: #2e0009;
+}
+li .color-31, li .color-32 {
+	color: #280007;
+}
+
+.post-meta * {
+	white-space: normal;
+	text-align: left;
+	line-height: 1.42857;
+	padding: 0;
+	clear: both;
+}
