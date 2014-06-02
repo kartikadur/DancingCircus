@@ -1,25 +1,27 @@
 <?php get_header(); ?>
 	<main class="container">
 		<section id="content" class="col-md-8 col-sm-12 col-xs-12">
-			<h2 class="page-header">
-				<?php printf(__('Category Archive: %s', 'dancingcircus'), single_cat_title('', false)); ?>
-				<?php
-				// Show an optional term description.
-				$term_description = term_description();
-				if (!empty($term_description)) :
-					printf('<small class="taxonomy-description">%s</small>', $term_description);
-				endif;
-				?>
-			</h2>
+			<header class="entry-header">
+				<h2 class="entry-title page-header">
+					<?php printf(__('Category Archive: %s','dancingcircus'),single_cat_title('',false)); ?>
+					<?php
+					// Show an optional term description.
+					$term_description=term_description();
+					if(!empty($term_description)) :
+					printf('<small class="taxonomy-description">%s</small>',$term_description);
+					endif;
+					?>
+				</h2>
+			</header>
 			<?php
-			if (have_posts()) :
-				/* Start the Loop */
-				while (have_posts()) :
-					the_post();
-					get_template_part('content', get_post_format());
-				endwhile;
+			if(have_posts()) :
+			/* Start the Loop */
+			while(have_posts()) :
+			the_post();
+			get_template_part('content',get_post_format());
+			endwhile;
 			else :
-				get_template_part('content', 'none');
+			get_template_part('content','none');
 			endif;
 			?>
 			<ul class="pager">

@@ -46,13 +46,52 @@ body {
  * Wordpress Special CSS ... SMH
  * this is to prevent the unit test from breaking the theme
  */
-.comment-content img, .entry-content img, .entry-summary img, #site-header img, .widget img, .wp-caption {
+#site-header img, .wp-caption {
+	margin: 20px auto;
 	max-width: 100%;
+	height: auto;
+}
+
+/* Alignment */
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+blockquote.alignleft, img.alignleft {
+	margin: 7px 24px 7px 0;
+}
+
+.wp-caption.alignleft {
+	margin: 7px 14px 7px 0;
+}
+
+blockquote.alignright, img.alignright {
+	margin: 7px 0 7px 24px;
+}
+
+.wp-caption.alignright {
+	margin: 7px 0 7px 14px;
+}
+
+blockquote.aligncenter, img.aligncenter, .wp-caption.aligncenter {
+	margin-top: 7px;
+	margin-bottom: 7px;
 }
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin: 0px;
+	margin: 0px auto;
 }
 
 img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
@@ -67,12 +106,17 @@ img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
 	position: relative;
 }
 
+.wp-caption {
+	overflow: hidden;
+	position: relative;
+}
+
 .gallery-item img {
 	height: auto;
 	width: 95%;
 }
 
-.gallery-caption {
+.gallery-caption, .wp-caption-text {
 	background-color: rgba(0, 0, 0, 0.7);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -91,7 +135,7 @@ img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
 	font-size: 0.8em;
 }
 
-.gallery-caption:before {
+.gallery-caption::before, .wp-caption-text::before {
 	content: "";
 	height: 100%;
 	min-height: 49px;
@@ -101,7 +145,7 @@ img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
 	width: 100%;
 }
 
-.gallery-item:hover .gallery-caption {
+.gallery-item:hover .gallery-caption, .wp-caption:hover .wp-caption-text {
 	opacity: 1;
 }
 
@@ -149,9 +193,6 @@ img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
  * 	End Wordpress Special CSS
  */
 
-#header {
-	margin: 20px 0;
-}
 /* Menu Styling */
 
 #navigation {
@@ -160,7 +201,7 @@ img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
 
 /* Overrides same line from bootstrap */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: #F1F1F1;
+	color: #FFF;
 	background-color: #6B0015;
 	font-weight: bold;
 }
@@ -281,7 +322,8 @@ article {
 }
 
 @media (max-width: 767px) {
-	article .post-thumbnail img {
+
+	.post-thumbnail img {
 		height: auto;
 		width: 100px;
 		margin: 45px 10px 10px 0;
@@ -291,28 +333,44 @@ article {
 		 box-shadow: 1px 1px 1px 0 #DDD;*/
 
 	}
+
+	.entry-title {
+		text-align: left;
+	}
 }
 
 @media (min-width: 768px) {
-	article .post-thumbnail img {
+
+	.post-thumbnail {
+		width: 100%;
+	}
+	.post-thumbnail img {
 		display: block;
 		margin: 0 auto;
 		float: none;
 	}
 
-	article .entry-header {
+	.entry-header {
 		position: relative;
 		z-index: 1;
 		background: #FFFDD0;
 	}
 
-	article .has-post-thumbnail .entry-title {
+	.entry-title {
+		text-align: center;
+	}
+
+	.has-post-thumbnail .entry-title {
 		margin-top: -40px;
+	}
+
+	.taxonomy-description {
+		text-align: left;
 	}
 
 }
 
-article .post-content {
+.post-content {
 	clear: both;
 }
 
@@ -407,4 +465,43 @@ li .color-31, li .color-32 {
 	line-height: 1.42857;
 	padding: 0;
 	clear: both;
+}
+
+/** Bootstrap Override CSS **/
+.pager li a {
+	border-radius: 0;
+}
+
+.pager li:hover a {
+	background: #6b0015;
+	color: #FFF;
+}
+
+/**Table CSS **/
+table, th, td {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	margin-bottom: 24px;
+	max-width: 100%;
+}
+
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+
+th {
+	border-width: 0 1px 1px 0;
+	font-weight: bold;
+	padding: 4px 6px;
+}
+
+td {
+	border-width: 0 1px 1px 0;
+	padding: 4px 6px;
 }

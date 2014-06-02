@@ -19,6 +19,23 @@ function enqueue_my_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_my_styles');
 add_action('wp_enqueue_scripts', 'enqueue_my_scripts');
 
+//Custom Header
+
+$defaults = array(
+	'default-image'          => '',
+	'random-default'         => FALSE,
+	'width'                  => 1170,
+	'height'                 => 300,
+	'flex-height'            => TRUE,
+	'flex-width'             => TRUE,
+	'default-text-color'     => '',
+	'header-text'            => FALSE,
+	'uploads'                => TRUE,
+	'wp-head-callback'       => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header', $defaults );
 //Menu or Navigation
 register_nav_menus(array('primary' => __('Primary Menu', 'dancingcircus'),
 // 'secondary' => __( 'Secondary menu in left sidebar', 'twentyfourteen' ),
