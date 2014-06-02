@@ -38,7 +38,116 @@ body {
 	background-image: -o-linear-gradient(right, transparent 50%, rgba(208, 175, 83, 0.3) 50%); /* For old Opera (11.1 to 12.0) */
 	background-image: linear-gradient(90deg, transparent 50%, rgba(208, 175, 83, 0.3) 50%); /* Standard syntax; must be last */
 	background-size: 100px 100px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
+
+/*
+ * Wordpress Special CSS ... SMH
+ * this is to prevent the unit test from breaking the theme
+ */
+.comment-content img, .entry-content img, .entry-summary img, #site-header img, .widget img, .wp-caption {
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0px;
+}
+
+img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
+	height: auto;
+	max-width: 100%;
+}
+
+.gallery-item {
+	float: left;
+	/*	margin: 0 4px 4px 0;*/
+	overflow: hidden;
+	position: relative;
+}
+
+.gallery-item img {
+	height: auto;
+	width: 95%;
+}
+
+.gallery-caption {
+	background-color: rgba(0, 0, 0, 0.7);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #fff;
+	line-height: 1.5;
+	margin: 0;
+	max-height: 50%;
+	opacity: 0;
+	padding: 6px 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	width: 100%;
+	font-size: 0.8em;
+}
+
+.gallery-caption:before {
+	content: "";
+	height: 100%;
+	min-height: 49px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.gallery-item:hover .gallery-caption {
+	opacity: 1;
+}
+
+/* Page-Links */
+.page-links {
+	clear: both;
+	margin-bottom: 10px;
+}
+
+.page-links a, .page-links > span {
+	background: #F1F1F1;
+	border: 1px solid #DDD;
+	color: #333;
+	display: inline-block;
+	height: 22px;
+	margin: 0;
+	margin-left: -5px;
+	padding: 0 8px;
+	text-align: center;
+}
+
+.page-links a {
+	background: #FFFDD0;
+	border: 1px solid #DDD;
+	color: #6B0015;
+	text-decoration: none;
+}
+
+.page-links a:hover {
+	background: #6B0015;
+	border: 1px solid #6B0015;
+	color: #fff;
+}
+
+.page-links > .page-links-title {
+	height: auto;
+	margin: 0;
+	padding: 0 7px 0 0;
+	width: auto;
+	border: none;
+	background: #FFFDD0
+}
+
+/*
+ * 	End Wordpress Special CSS
+ */
 
 #header {
 	margin: 20px 0;
@@ -171,12 +280,36 @@ article {
 	 box-shadow: 1px 1px 1px 0 #333;*/
 }
 
-article .post-thumbnail {
-	border: 1px solid #FFFFFF;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	padding: 5px;
-	background: #999;
+@media (max-width: 767px) {
+	article .post-thumbnail img {
+		height: auto;
+		width: 100px;
+		margin: 45px 10px 10px 0;
+		float: left;
+		/*border-radius: 4px;
+		 border: 1px solid #999;
+		 box-shadow: 1px 1px 1px 0 #DDD;*/
+
+	}
+}
+
+@media (min-width: 768px) {
+	article .post-thumbnail img {
+		display: block;
+		margin: 0 auto;
+		float: none;
+	}
+
+	article .entry-header {
+		position: relative;
+		z-index: 1;
+		background: #FFFDD0;
+	}
+
+	article .has-post-thumbnail .entry-title {
+		margin-top: -40px;
+	}
+
 }
 
 article .post-content {
