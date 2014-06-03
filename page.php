@@ -4,10 +4,10 @@
 		<?php if (have_posts()) while (have_posts()) : the_post();
 		?>
 		<article id="post-<?php the_ID(); ?>">
-			<header class="entry-header">
-				<h2 class="entry-title page-header"> <?php the_title(); ?> </h2>
+			<header class="post-header">
+				<h2 class="post-title page-header"> <?php the_title(); ?> </h2>
 			</header>
-			<div class="entry-content">
+			<div class="post-content">
 				<?php the_content(); ?>
 			</div>
 		</article>

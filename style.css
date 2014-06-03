@@ -24,6 +24,15 @@ a:hover, a:focus {
 	color: #333;
 }
 
+.pager li a {
+	border-radius: 0;
+}
+
+.pager li:hover a {
+	background: #6b0015;
+	color: #FFF;
+}
+
 /*
  * Css Code
  */
@@ -42,78 +51,114 @@ body {
 	word-wrap: break-word;
 }
 
+img {
+	height: auto;
+	max-width: 100%;
+}
+
 /*
  * Wordpress Special CSS ... SMH
  * this is to prevent the unit test from breaking the theme
  */
-#site-header img, .wp-caption {
+#site-header img {
 	margin: 20px auto;
-	max-width: 100%;
-	height: auto;
 }
 
 /* Alignment */
 
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
+.alignnone {
+	margin: 5px 20px 20px 0;
 }
 
 .aligncenter {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 5px auto 5px auto;
 }
 
-blockquote.alignleft, img.alignleft {
-	margin: 7px 24px 7px 0;
+.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+	display: block;
+	margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.wp-caption.alignnone {
+	margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignleft {
-	margin: 7px 14px 7px 0;
-}
-
-blockquote.alignright, img.alignright {
-	margin: 7px 0 7px 24px;
+	margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignright {
-	margin: 7px 0 7px 14px;
+	margin: 5px 0 20px 20px;
 }
 
-blockquote.aligncenter, img.aligncenter, .wp-caption.aligncenter {
-	margin-top: 7px;
-	margin-bottom: 7px;
+/** Gallery/WP_Caption CSS **/
+
+.gallery-item, .wp-caption {
+	overflow: hidden;
+	position: relative;
+	/*background: #fff;
+	border: 1px solid #f0f0f0;*/
+	max-width: 100%; /* Image does not overflow the content area */
+	padding: 5px 3px;
+	text-align: center;
 }
 
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin: 0px auto;
-}
-
-img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
-	height: auto;
-	max-width: 100%;
-}
+/*.wp-caption {
+ background: #fff;
+ border: 1px solid #f0f0f0;
+ max-width: 100%; /* Image does not overflow the content area *
+ padding: 5px 3px 10px;
+ text-align: center;
+ }*/
 
 .gallery-item {
 	float: left;
-	/*	margin: 0 4px 4px 0;*/
-	overflow: hidden;
-	position: relative;
-}
-
-.wp-caption {
-	overflow: hidden;
-	position: relative;
 }
 
 .gallery-item img {
 	height: auto;
-	width: 95%;
+	width: 100%;
+}
+
+.wp-caption img, .post-content img {
+	border: 0 none !important;
+	height: auto;
+	/*	margin: 0;*/
+	max-width: 100%;
+	padding: 0 !important;
+	box-shadow: 1px 1px 1px 0 #999;
+/*	width: auto;*/
 }
 
 .gallery-caption, .wp-caption-text {
@@ -334,7 +379,7 @@ article {
 
 	}
 
-	.entry-title {
+	.post-title {
 		text-align: left;
 	}
 }
@@ -350,17 +395,17 @@ article {
 		float: none;
 	}
 
-	.entry-header {
+	.post-header {
 		position: relative;
 		z-index: 1;
 		background: #FFFDD0;
 	}
 
-	.entry-title {
+	.post-title {
 		text-align: center;
 	}
 
-	.has-post-thumbnail .entry-title {
+	.has-post-thumbnail .post-title {
 		margin-top: -40px;
 	}
 
@@ -370,7 +415,23 @@ article {
 
 }
 
+/*.post-content img {
+ border: 0 none;
+ height: auto;
+ max-width: 100%;
+ padding: 0;
+ width: auto;
+ }*/
+
 .post-content {
+	clear: both;
+}
+
+.post-meta * {
+	white-space: normal;
+	text-align: left;
+	line-height: 1.42857;
+	padding: 0;
 	clear: both;
 }
 
@@ -390,12 +451,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(106, 0, 21, 0.6);
 	outline: 0 none;
 }
-
-/*.navbar-search input:focus + span > button {
- border-color: rgba(106, 0, 21, 0.8);
- box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(106, 0, 21, 0.6);
- outline: 0 none;
- }*/
 
 /** Tag Cloud CSS **/
 #tag-links {
@@ -457,24 +512,6 @@ li .color-29, li .color-30 {
 }
 li .color-31, li .color-32 {
 	color: #280007;
-}
-
-.post-meta * {
-	white-space: normal;
-	text-align: left;
-	line-height: 1.42857;
-	padding: 0;
-	clear: both;
-}
-
-/** Bootstrap Override CSS **/
-.pager li a {
-	border-radius: 0;
-}
-
-.pager li:hover a {
-	background: #6b0015;
-	color: #FFF;
 }
 
 /**Table CSS **/

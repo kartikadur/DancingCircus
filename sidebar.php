@@ -82,14 +82,16 @@
 		<?php $arr = wp_tag_cloud($args); ?>
 		<ul id="tag-links" class="col-xs-12">
 			<?php
-			foreach ($arr as $value) {
-				$ptr1 = strpos($value, 'font-size:');
-				$ptr2 = strpos($value, 'px');
-				$px = round(substr($value, $ptr1 + 10, $ptr2 - $ptr1 - 10));
-				$value = substr($value, 0, $ptr1 + 10) . $px . substr($value, $ptr2);
-				$ptr1 = strpos($value, "class=");
-				$value = substr($value, 0, $ptr1 + 7) . 'color-' . $px . ' ' . substr($value, $ptr1 + 7);
-				echo '<li>' . $value . '</li> ';
+			if (!empty($arr)) {
+				foreach ($arr as $value) {
+					$ptr1 = strpos($value, 'font-size:');
+					$ptr2 = strpos($value, 'px');
+					$px = round(substr($value, $ptr1 + 10, $ptr2 - $ptr1 - 10));
+					$value = substr($value, 0, $ptr1 + 10) . $px . substr($value, $ptr2);
+					$ptr1 = strpos($value, "class=");
+					$value = substr($value, 0, $ptr1 + 7) . 'color-' . $px . ' ' . substr($value, $ptr1 + 7);
+					echo '<li>' . $value . '</li> ';
+				}
 			}
 			?>
 		</ul>

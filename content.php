@@ -14,15 +14,15 @@
 		<?php the_post_thumbnail(); ?>
 	</div>
 	<?php endif; ?>
-	<header class="entry-header <?php
+	<header class="post-header <?php
 		if(has_post_thumbnail())
 			echo "has-post-thumbnail";
 	?>">
 		<?php
 		if(is_single()) {
-		the_title("<h2 class='entry-title page-header'>","</h2>");
+		the_title("<h2 class='post-title page-header'>","</h2>");
 		} else {
-		the_title("<h2 class='entry-title page-header'><a href='".esc_url(get_permalink())."' rel='bookmark' title='Permanent Link to ".the_title_attribute('echo=0')."'>","</a></h2>");
+		the_title("<h2 class='post-title page-header'><a href='".esc_url(get_permalink())."' rel='bookmark' title='Permanent Link to ".the_title_attribute('echo=0')."'>","</a></h2>");
 		}
 		?>
 	</header>

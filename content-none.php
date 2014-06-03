@@ -1,6 +1,6 @@
 <article id="no-result" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h2 class="entry-title page-header">Nothing Found</h2>		
+	<header class="post-header">
+		<h2 class="post-title page-header">Nothing Found</h2>		
 	</header>
 	<div class="post-content clearfix">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
