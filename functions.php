@@ -36,16 +36,13 @@ $defaults = array(
 	'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $defaults );
-//Menu or Navigation
-register_nav_menus(array('primary' => __('Primary Menu', 'dancingcircus'),
-// 'secondary' => __( 'Secondary menu in left sidebar', 'twentyfourteen' ),
-));
 
+//Menu or Navigation
 register_nav_menus(array('primary' => __('Primary Menu', 'dacningcircus'), ));
 
 //Sidebar
 if (function_exists('register_sidebar')) {
-	register_sidebar(array('name' => 'Primary Sidebar', 'before_widget' => '<li id="%1$s">', 'after_widget' => '</li>', 'before_title' => '<h2>', 'after_title' => '</h2>'));
+	register_sidebar(array('name' => __( 'Primary Sidebar', 'dancingcircus' ), 'before_widget' => '<li id="%1$s" class="list-group-item">', 'after_widget' => '</li>', 'before_title' => '<h4>', 'after_title' => '</h4>'));
 }
 
 //Enable post Thumbnails

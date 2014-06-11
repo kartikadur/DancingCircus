@@ -1,40 +1,8 @@
-<!-- <aside id="sidebar" class="col-md-4 col-sm-12 col-xs-12">
-<ul>
-<?php dynamic_sidebar(); ?>
-</ul>
-</aside> -->
 <section id="sidebar" class="col-md-4 col-sm-12 col-xs-12">
-	<aside id="hours-locn">
+	<aside id="hours-location" class>
 		<h3>Hours &amp; Location</h3>
-		<h4>Store</h4>
-		<address id="address">
-			<strong>Location:</strong>
-			<br />
-			109 E Kirkwood Ave,
-			<br />
-			Bloomington, IN 47408
-			<br />
-			<strong>Contact: </strong>
-			<br />
-			(812) 320-4033
-		</address>
-		<h4>Hours</h4>
 		<ul class="list-group">
-			<li class="list-group-item">
-				Tuesday<span class="badge">12pm - 6pm</span>
-			</li>
-			<li class="list-group-item">
-				Wednesday<span class="badge">12pm - 6pm</span>
-			</li>
-			<li class="list-group-item">
-				Thursday<span class="badge">12pm - 6pm</span>
-			</li>
-			<li class="list-group-item">
-				Friday<span class="badge">12pm - 6pm</span>
-			</li>
-			<li class="list-group-item">
-				Saturday<span class="badge">11pm - 5pm</span>
-			</li>
+			<?php dynamic_sidebar(); ?>
 		</ul>
 	</aside>
 	<aside id="post-recent">

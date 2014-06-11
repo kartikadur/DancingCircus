@@ -40,7 +40,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand visible-xs" href="#address">Location &amp; Hours</a>
+					<a class="navbar-brand visible-xs" href="#hours-location">Hours &amp; Location</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
